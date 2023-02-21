@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:latihan/row_widget.dart';
+import 'package:latihan/container_widget.dart';
+import 'package:latihan/column_widget.dart';
+import 'package:latihan/latihan_widget.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: "Latihan Flutter",
       home: Scaffold(
         appBar: AppBar(
@@ -17,16 +22,31 @@ class MyApp extends StatelessWidget {
           centerTitle: true,
           title: Text("Latihan"),
         ),
-        body: Center(
-          child: Text(
-            "Hallo Dunia",
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.blue,
-              backgroundColor: Colors.black12,
-            ),
-          ),
+        body: Column(
+          children: [
+            LatihanWidget(),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class HelloWidget extends StatelessWidget {
+  const HelloWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text(
+        "Hallo Dunia",
+        style: TextStyle(
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
+          color: Colors.blue,
+          backgroundColor: Colors.black12,
         ),
       ),
     );
